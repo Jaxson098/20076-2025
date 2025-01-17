@@ -11,7 +11,6 @@ import commands2
 
 from robotcontainer import RobotContainer
 
-
 class MyRobot(commands2.TimedCommandRobot):
     """
     Command v2 robots are encouraged to inherit from TimedCommandRobot, which

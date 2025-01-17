@@ -33,9 +33,9 @@ class DriveConstants:
     kRotationalSlewRate = 2.0  # percent per second (1 = 100%)
 
     # Chassis configuration
-    kTrackWidth = units.inchesToMeters(26.5)
+    kTrackWidth = units.inchesToMeters(18.5)
     # Distance between centers of right and left wheels on robot
-    kWheelBase = units.inchesToMeters(26.5)
+    kWheelBase = units.inchesToMeters(18.5)
 
     # Distance between front and back wheels on robot
     kModulePositions = [
@@ -56,16 +56,20 @@ class DriveConstants:
     kBackRightChassisAngularOffset = math.pi / 2
 
     # SPARK MAX CAN IDs
+#NOTE: change
     kFrontLeftDrivingCanId = 1
-    kRearLeftDrivingCanId = 2
-    kFrontRightDrivingCanId = 3
-    kRearRightDrivingCanId = 4
+    kFrontLeftTurningCanId = 2
 
-    kFrontLeftTurningCanId = 5
+    kFrontRightDrivingCanId = 3
+    kFrontRightTurningCanId = 4
+
+    kRearLeftDrivingCanId = 5
     kRearLeftTurningCanId = 6
-    kFrontRightTurningCanId = 7
+
+    kRearRightDrivingCanId = 7
     kRearRightTurningCanId = 8
 
+#NOTE: check
     kGyroReversed = -1  # can be +1 if not flipped (affects field-relative driving)
 
 
@@ -81,9 +85,10 @@ class ModuleConstants:
 
     # Calculations required for driving motor conversion factors and feed forward
     kDrivingMotorFreeSpeedRps = NeoMotorConstants.kFreeSpeedRpm / 60
-    kWheelDiameterMeters = 0.0762
+    kWheelDiameterMeters = 0.1016
     kWheelCircumferenceMeters = kWheelDiameterMeters * math.pi
     # 45 teeth on the wheel's bevel gear, 22 teeth on the first-stage spur gear, 15 teeth on the bevel pinion
+#NOTE: maybe 22
     kDrivingMotorReduction = (45.0 * 22) / (kDrivingMotorPinionTeeth * 15)
     kDriveWheelFreeSpeedRps = (
         kDrivingMotorFreeSpeedRps * kWheelCircumferenceMeters
